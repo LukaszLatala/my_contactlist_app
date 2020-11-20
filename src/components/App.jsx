@@ -8,7 +8,7 @@ class App extends Component{
 state = {
   contacts: [...contactsData]
 }
-
+ 
 deleteCard = (id) => {
 const filteredContects = this.state.contacts.filter((contact) => contact.id !== id)
   this.setState({
@@ -16,7 +16,10 @@ const filteredContects = this.state.contacts.filter((contact) => contact.id !== 
   })
 }
 addContactCard = (e) => {
+
+  
 e.preventDefault()
+
 const id = Math.floor(Math.random()*10000)
 const name = e.target.contactName.value
 // console.log(name);
@@ -31,15 +34,17 @@ const newCard = {
   phone,
   email
 }
+
+
+if(newCard.name && newCard.imgURL && newCard.phone  && newCard.email  !==""){
 this.setState({
   contacts: [ ...this.state.contacts,newCard]
 })
 
 e.target.reset();
-
-
 }
 
+}
 
 
   render(){
