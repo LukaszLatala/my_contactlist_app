@@ -21,6 +21,7 @@ const AddCardForm = (props) => {
         name="contactImg"
         placeholder="contactImg-URL "
         className="contactImg"
+        title="add URL image in string"
       />
       <input
         type="text"
